@@ -140,7 +140,7 @@ module DBF
     end
 
     def clean(value) # nodoc
-      truncated_value = value.strip.partition("\x00").first
+      truncated_value = value.strip.partition("\x00").first rescue "unknowncolumn"
       truncated_value.gsub(/[^\x20-\x7E]/, '')
     end
 
